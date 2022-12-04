@@ -10,6 +10,8 @@ const axios = require('axios');
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const hook = new Webhook(webhook);
 
+const mingames2 = mingames
+const bannedtime2 = bannedtime
 
 //Define your auhtflow
 new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.net/' }).getXboxToken().then(async (t) => {
@@ -49,7 +51,7 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
         console.log("user on whitelist", whitelistdb?.includes(XUID))
         if (XUID !== undefined && !whitelistdb?.includes(XUID) && XUID !== client.profile.xuid) {
           console.log("User joined:", XUID, usernamecheck)
-          axios.get(`https://apiv2.economyplus.solutions/api/auth/${XUID}/${mingames}/${bannedtime}`, {
+          axios.get(`https://apiv2.economyplus.solutions/api/auth/${XUID}/${mingames2}/${bannedtime2}`, {
             headers: {
               'Authorization': `XBL3.0 x=${t.userHash};${t.XSTSToken}`,
               'fairplay': key,
