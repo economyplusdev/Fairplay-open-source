@@ -1,0 +1,13 @@
+{
+    "realmcode": "Realmcode",
+    "key": "Fairplay Auth key",
+    "bannedtime": Time in hours since a user can play a banned device,
+    "bannedgames": [
+        "Minecraft for Windows",
+        "Minecraft Launcher",
+        "Minecraft for Android",
+        "Minecraft for Kindle Fire"
+    ],
+    "mingames": Min games to join your realm,
+    "webhook": "Discord Webhook"
+}
