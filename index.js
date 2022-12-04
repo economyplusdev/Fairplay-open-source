@@ -61,6 +61,7 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
             const username = res.data.ign
             const game1 = res.data.game1
             const pfp = res.data.pfp
+            const reason = res.data.reason
 
             if (res.data.kick == true) {
               client.write('command_request', {
