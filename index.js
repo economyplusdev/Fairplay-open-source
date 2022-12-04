@@ -113,7 +113,7 @@ Device: **${game1}**
             }
 
 
-          }).catch((e) => { console.log(`Error - Sending request`); console.log(e) });
+          }).catch((e) => { console.log(`Error - Sending request`);  });
 
         }
 
