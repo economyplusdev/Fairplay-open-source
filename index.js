@@ -6,7 +6,6 @@ const requestId = uuid.v4()
 const bedrock = require('bedrock-protocol')
 const { Authflow, Titles } = require('prismarine-auth')
 const axios = require('axios');
-const { start } = require('repl');
 
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const hook = new Webhook(webhook);
@@ -63,22 +62,9 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
             const game1 = res.data.game1
             const pfp = res.data.pfp
 
-            const andriod = res.data.andriod
-            const launcher = res.data.launcher
-            const windows = res.data.windows
-            const kindle = res.data.kindle
-
-            const andriodt = res.data.time1
-            const launchert = res.data.time2
-            const windowst = res.data.time3
-            const kindlet = res.data.time4
-
-
-            if (res.data.private == true) {
-
-
+            if (res.data.kick == true) {
               client.write('command_request', {
-                command: `kick "${username}"  \n§8[§9Fairplay+§8]\n§8Reason: §rProfile is private\n§8`,
+                command: `kick "${username}"  \n§8[§9Fairplay+§8]\n§8Reason: §r${reason}\n§8`,
                 origin: {
                   type: 0,
                   uuid: '',
@@ -94,63 +80,11 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
 User kicked
 Username: **${username}**
 XUID: **${XUID}**
-Reason: **User has profile as private**
+Reason: **${reason}**
 `)
                 .setTimestamp();
               return hook.send(embed);
             }
-
-
-            const gamesowned = res.data.gamesowned
-            if (mingames => gamesowned) {
-              client.write('command_request', {
-                command: `kick "${username}"  \n§8[§9Fairplay+§8]\n§8Reason: §rYou do not have enough games owned to play this server\n§8`,
-                origin: {
-                  type: 0,
-                  uuid: '',
-                  request_id: '',
-                },
-              });
-
-              const embed = new MessageBuilder()
-                .setTitle('Fairplay AC')
-                .setColor(16408415)
-                .setThumbnail(pfp)
-                .setDescription(`
-User kicked
-Username: **${username}**
-XUID: **${XUID}**
-Reason: **User does not have enough games to join this server**
-`)
-                .setTimestamp();
-              return hook.send(embed);
-
-            }
-
-            if (andriod == true && andriodt >= bannedtime || launcher == true && launchert >= bannedtime || windows == true && windowst >= bannedtime || kindle == true && kindlet >= bannedtime) {
-              client.write('command_request', {
-                command: `kick "${username}"  \n§8[§9Fairplay+§8]\n§8Reason: §rRecently playing a banned device\n§8`,
-                origin: {
-                  type: 0,
-                  uuid: '',
-                  request_id: '',
-                },
-              });
-              const embed = new MessageBuilder()
-                .setTitle('Fairplay AC')
-                .setColor(16408415)
-                .setThumbnail(pfp)
-                .setDescription(`
-User kicked
-Username: **${username}**
-XUID: **${XUID}**
-Reason: **Recently played a banned device**
-`)
-                .setTimestamp();
-              return hook.send(embed);
-            }
-
-
 
             if (bannedgames.includes(game1)) {
               console.log("user is on banned device")
@@ -176,8 +110,6 @@ Device: **${game1}**
                 .setTimestamp();
               return hook.send(embed);
             }
-
-
 
 
           }).catch((e) => { console.log(`Error - Sending request`); console.log(e) });
