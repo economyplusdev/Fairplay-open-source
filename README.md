@@ -22,6 +22,9 @@ Features
 | Global ban Database                        | ✅                      | ✅           | ❌                    |
 
 
+Docs are at https://docs.economyplus.solutions/
+
+
 
 Copyright (c) <year>, <copyright holder>
 All rights reserved.
