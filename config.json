@@ -9,5 +9,8 @@
         "Minecraft for Kindle Fire"
     ],
     "mingames": Min games to join your realm,
-    "webhook": "Discord Webhook"
+    "webhook": "Discord Webhook",
+    "gamerscore": Min gamerscore,
+    "friends": Min friends,
+    "followers": Min followers
 }
