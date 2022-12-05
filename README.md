@@ -1,5 +1,10 @@
 # Fairplay-open-source
 
+
+Best free MCBE automod base.
+Get a Fairplay API key @ discord.gg/realmbot
+
+
 Copyright (c) <year>, <copyright holder>
 All rights reserved.
 
