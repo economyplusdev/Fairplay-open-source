@@ -1,4 +1,4 @@
-const { realmcode, key, bannedgames, bannedtime, mingames, webhook } = require('./config.json');
+const { realmcode, key, bannedgames, bannedtime, mingames, webhook, gamerscore, friends, followers } = require('./config.json');
 const editJsonFile = require("edit-json-file");
 const fs = require('fs');
 const uuid = require('uuid');
@@ -12,6 +12,9 @@ const hook = new Webhook(webhook);
 
 const mingames2 = mingames
 const bannedtime2 = bannedtime
+const gamerscore2 = gamerscore
+const friends2 = friends
+const followers2 = followers
 
 //Define your auhtflow
 new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.net/' }).getXboxToken().then(async (t) => {
@@ -51,7 +54,7 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
         console.log("user on whitelist", whitelistdb?.includes(XUID))
         if (XUID !== undefined && !whitelistdb?.includes(XUID) && XUID !== client.profile.xuid) {
           console.log("User joined:", XUID, usernamecheck)
-          axios.get(`https://apiv2.economyplus.solutions/api/auth/${XUID}/${mingames2}/${bannedtime2}`, {
+          axios.get(`https://apiv2.economyplus.solutions/api/auth/${XUID}/${mingames2}/${bannedtime2}/${followers2}/${friends2}/${gamerscore2}`, {
             headers: {
               'Authorization': `XBL3.0 x=${t.userHash};${t.XSTSToken}`,
               'fairplay': key,
