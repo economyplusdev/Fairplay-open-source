@@ -2,7 +2,6 @@
 
 
 Best free MCBE automod base.
-Get a Fairplay API key @ discord.gg/realmbot
 
 
 Features
@@ -23,6 +22,12 @@ Features
 
 
 Docs are at https://docs.economyplus.solutions/
+
+
+
+1.) get a API key at our discord, discord.gg/anticheat
+2.) install node, and then run npm i in the folder
+3.) fill out config.json
 
 
 
