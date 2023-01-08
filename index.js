@@ -54,7 +54,7 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
             headers: {
               'Authorization': `XBL3.0 x=${t.userHash};${t.XSTSToken}`,
               'fairplay': key,
-              'User-Agent': 'Axios 0.21.1'
+              'User-Agent': 'Axios/0.21.1'
             }
           }).then((res) => {
             console.log("Sent request")
