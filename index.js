@@ -42,9 +42,9 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
       client.on('player_list', async (player) => {
         // console.log(player.records.records[0].xbox_user_id)
         // console.log(player.records.records[0].username)
-        const XUID = player.records.records[0].xbox_user_id
-        const usernamecheck = player.records.records[0].username
-        if (player !== player.records.type === "add") {
+        const XUID = player?.records?.records[0]?.xbox_user_id
+        const usernamecheck = player?.records?.records[0]?.username
+        if (player !== player?.records?.type === "add") {
           return console.log("skipping packet")
         }
         console.log("user on whitelist", whitelistdb?.includes(XUID))
@@ -58,10 +58,10 @@ new Authflow('', `./bot/auth`, { relyingParty: 'https://pocket.realms.minecraft.
             }
           }).then((res) => {
             console.log("Sent request")
-            const username = res.data.ign
-            const game1 = res.data.game1
-            const pfp = res.data.pfp
-            const reason = res.data.reason
+            const username = res?.data?.ign
+            const game1 = res?.data?.game1
+            const pfp = res?.data?.pfp
+            const reason = res?.data?.reason
 
             if (res.data.kick == true) {
               client.write('command_request', {
