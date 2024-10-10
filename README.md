@@ -1,36 +1,3 @@
-# Fairplay-open-source
-
-
-Best free MCBE automod base.
-
-
-Features
-| **Name**                                   | ⚡ Fairplay Open Src ⚡ | 🗡️ Fairplay AC 🗡️ | 🐢 Realmbot.dev 🐢 |
-| ------------------------------------------ | ----------------------- | ------------ | ---------------------- |
-| Open source                                | ✅                      | ❌           | ❌                    |
-| Free                                       | ✅                      | ✅           | ❌                    |
-| Supports custom modules                    | ✅                      | ❌           | ❌                    |
-| Self hosted                                | ✅                      | ❌           | ❌                    |
-| Anti Crasher                               | ❌                      | ✅           | ❌                    |
-| Under 800ms Authentication speeds          | ✅                      | ✅           | ❌                    |
-| Modular Auth to prevent rate limits        | ✅                      | ✅           | ❌                    |
-| 99.99% uptime                              | ✅                      | ✅           | ❌                    |
-| Realm manager built in                     | ❌                      | ✅           | ✅                    |
-| Realm to discord                           | ❌                      | ✅           | ✅                    |
-| AI Auth support                            | ❌                      | ⚠️           | ❌                    |
-| Global ban Database                        | ✅                      | ✅           | ❌                    |
-
-
-Docs are at https://docs.economyplus.solutions/
-
-
-
-1.) get a API key at our discord, discord.gg/anticheat
-2.) install node, and then run npm i in the folder
-3.) fill out config.json
-
-
-
 Copyright (c) <year>, <copyright holder>
 All rights reserved.
 
